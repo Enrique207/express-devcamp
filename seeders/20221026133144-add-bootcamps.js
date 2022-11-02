@@ -4,22 +4,37 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
 
-     await queryInterface.bulkInsert('Bootcamps', [
+     await queryInterface.bulkInsert('bootcamps', [
     {
-     name: 'Mundo',
-     description: 'Mi mundo es tuyo',
-     webside: 'No sé',
+     name: 'PHP',
+     description: 'Bootcamp for PHP learning',
      phone: 300-11-11,
-     average_rating
-     }], {});
+     average_rating: 3,
+     average_cost: 4550,
+     user_id: 1
+     },
+     {
+      name: 'Express',
+      description: 'Bootcamp for Javascripr learning',
+
+      phone: 300-0-10,
+      average_rating: 4,
+      average_cost: 6000,
+      user_id: 2
+     },
+     {
+      name: 'CSS Bootcamp',
+      description: 'Bootcamp for CSS learning',
+      phone: 300-0-10,
+      average_rating: 4,
+      average_cost: 6000,
+      user_id: 3
+     }
+    ], {});
   },
 
   async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+    await queryInterface.bulkDelete('bootcamps', null, {});
+
   }
 };
