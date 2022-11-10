@@ -10,7 +10,7 @@ module.exports = {
        weeks: 11,
        enroll_cost: 4550,
        minimum_skill: 'Fast learning',
-       bootcamps_id: 6
+       bootcamps_id: 1
        },
        {
         title: 'i dont know',
@@ -18,7 +18,7 @@ module.exports = {
         weeks: 11,
         enroll_cost: 4550,
         minimum_skill: 'Fast learning',
-        bootcamps_id: 5
+        bootcamps_id: 2
        },
        {
         title: 'Lenguages',
@@ -26,7 +26,7 @@ module.exports = {
         weeks: 11,
         enroll_cost: 4550,
         minimum_skill: 'Fast learning',
-        bootcamps_id: 4
+        bootcamps_id: 3
        }
       ], {});
   },

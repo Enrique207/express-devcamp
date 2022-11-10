@@ -7,8 +7,10 @@ const connectDB = require('./config/db')
 const listEndpoint = require ('express-list-endpoints')
 //los componentes de ruta
 const bootcampRoutes = require('./Routes/BootcampRoutes')
-const courseRoutes = require('./Routes/CourseRouter')
+const courseRouter = require('./Routes/CourseRouter')
 const userRoutes = require('./Routes/UserRoutes')
+const reviewRoutes = require('./Routes/ReviewRoutes')
+
 //establecer archibos de configuracion
 dotenv.config({
     path:'./config/config.env'
@@ -28,8 +30,9 @@ connectDB()
 
 //rutas de express
 app.use('/api/v1/bootcamps' , bootcampRoutes)
-app.use('/api/v2/courses', courseRoutes )
+app.use('/api/v2/courses', courseRouter )
 app.use('/api/v3/users' , userRoutes)
+app.use('/api/v4/reviews' , reviewRoutes)
 
 //endpoints de aplicacion
 app.get('/' , (request , response)=>{

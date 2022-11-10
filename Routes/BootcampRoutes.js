@@ -1,62 +1,25 @@
 const express = require('express')
+const { 
+    getAllBootcamps,
+    getSingleBootcamp,
+    updateBootcamp,
+    deleteBootcamp,
+    createBootcamp
+} = require('../controllers/BootcampController')
+
 
 //definir objeto de ruteo
-
 const router = express.Router()
 
-//listar todos los bootcamps    
-router.get('/', (req, res)=>{
-    res
-        .status(200)
-        .json({
-            "success": true,
-            "data" : "aqui van a salir todos los bootcamps"
-        })
-})
+//crear rutas sin parametros 
+router.route('/')
+            .get(getAllBootcamps)
+            .post(createBootcamp)
 
-//listar bootcamp por id
-router.get('/:id' , (req,res)=>{
-    //console.log(req.params.id)
-    res
-        .status(200)
-        .json({
-            "success": true,
-            "data": `aqui  van a salir el bootcamp cuyo id es ${req.params.id}`
-        })
-})
-
-//actualizar bootcamps
-
-router.put('/:id', (req, res)=>{
-    console.log(req.params.id)
-    res
-        .status(200)
-        .json({
-            "success": true,
-            "data" : `aqui se va a actualizar el bootcamp con id ${req.params.id}`
-        })
-})
-
-//Eliminar
-
-router.delete('/:id', (req, res)=>{
-    console.log(req.params.id)
-    res
-        .status(200)
-        .json({
-            "success": true,
-            "data" : `aqui se va a eliminar el bootcamp con id ${req.params.id}`
-        })
-})
-
-//crear nuevo bootcamps
-router.post('/', (req, res)=>{
-    res
-        .status(200)
-        .json({
-            "success": true,
-            "data" : "aqui se van a registrar los bootcamps"
-        })
-})
+//crear rutas con parametros
+router.route('/:id')
+                .get(getSingleBootcamp)
+                .put(updateBootcamp)
+                .delete(deleteBootcamp)
 
 module.exports = router

@@ -25,7 +25,7 @@ module.exports = {
   //crear la columna 'bootcamp_id' FK con  bootcamps
   //paremetrto: 1. La tabla de donde vas a remover la columna
   //            2. La columna a eliminar 
-  await queryInterface.removeColumn('courses', 'bootcamp_id')
+  await queryInterface.removeColumn('courses', 'bootcamps_id')
   
   }
 };
